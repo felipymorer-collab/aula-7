@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int numero() {
+    return rand() % 10;
+}
+
+int main() {
+    int segredo, chute;
+
+    srand(time(NULL));
+
+    segredo = numero();
+
+    do {
+        printf("Digite um numero entre 0 e 9: ");
+        scanf("%d", &chute);
+
+        if (chute == segredo) {
+            printf("Voce acertou!\n");
+        } else {
+            printf("Errou! Tente novamente.\n");
+        }
+
+    } while (chute != segredo);
+
+    return 0;
+}
