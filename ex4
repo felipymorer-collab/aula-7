@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int numero() {
+    return rand() % 10;
+}
+
+int main() {
+    int a, b, resposta, resultado;
+    int pontos = 0;
+
+    srand(time(NULL));
+
+    while (1) {
+        a = numero();
+        b = numero();
+        resultado = a + b;
+
+        printf("Quanto eh %d + %d? ", a, b);
+        scanf("%d", &resposta);
+
+        if (resposta == resultado) {
+            pontos++;
+            printf("Correto! Pontos: %d\n\n", pontos);
+        } else {
+            printf("Errado! O resultado era %d\n", resultado);
+            break;
+        }
+    }
+
+    printf("Fim de jogo! Pontuacao final: %d\n", pontos);
+
+    return 0;
+}
